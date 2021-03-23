@@ -1,0 +1,109 @@
+/*avatar product card*/
+.card-avatar{
+     background-color: rgb(228, 247, 248) !important;
+    margin-left: 10%;
+  border-radius: 5px;
+  box-shadow:   0px 3px 10px rgba(46, 45, 45, 0.2);
+}
+
+/*product avatar section*/
+.card-body-avatar{
+    text-align: center;
+}
+
+
+/*avatar and it's image*/
+
+.avatar{
+    padding-top: 1%;
+}
+
+.CmpPic{
+    width: 70%;
+    border-radius: 100%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    
+}
+
+
+/*product name*/
+.ProdName{
+    padding-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+/*btn action*/
+
+
+.btnUpdateProd{
+     margin-top: 1%;
+    margin-bottom: 3%;
+    color: white;
+    border-radius: 40px;
+    border:none;
+    padding-top:5px;
+    padding-bottom: 5px;
+    width: 20%;
+    border:none;
+    outline: none;
+    color:  #68A5CF;
+}
+
+.btnUpdateProd:hover{
+     background-color: #8fbcdb;
+}
+
+.btnDeleteProd{
+     margin-top: 3%;
+    margin-left: 3%;
+    color: white;
+    border-radius: 40px;
+    border:none;
+    padding-top:5px;
+    padding-bottom: 5px;
+    width: 20%;
+    border:none;
+    outline: none;
+    color: #df2023;
+    
+}
+.btnDeleteProd:hover{
+    background-color: #E64C4F;
+    
+}
+
+
+/*information sector*/
+
+
+/* product information card*/
+.card-product-info{
+     background-color: rgb(228, 247, 248) !important;
+    margin-right: 3%;
+    border-radius: 5px;
+    box-shadow:   0px 3px 10px rgba(46, 45, 45, 0.2);
+}
+
+
+.card-body-infor{
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+/*product type*/
+
+.prod-type{
+    padding-top: 1%;
+    color: grey;
+}
+
+
+/*description*/
+
+.information{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+ 
