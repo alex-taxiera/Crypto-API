@@ -23,8 +23,9 @@ class ProfAction extends React.Component {
 
                     </div>
                     <div class="ligne">
+                        
                         <hr class="seprate"></hr>
-
+                     
                     </div>
                     <div class="descCmp">
                         {this.state.cmpDesc}

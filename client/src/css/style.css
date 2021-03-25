@@ -1,5 +1,6 @@
-body{
+.root{
     background-image: linear-gradient(#8472d4,  #2699fb);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    min-height: 100vh;
 }

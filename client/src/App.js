@@ -9,8 +9,22 @@ import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Product from "./Product/Product";
 import Event from "./Event/ProfileEvent";
+import Suit from "./SuitCase/Suit"; 
 
+
+/*redux*/
+
+import {useDispatch} from 'react-redux';
+import { useEffect } from 'react';
+import {getProd} from './actions/post';
 function App() {
+  
+  
+
+const dispatch=useDispatch();
+useEffect(()=>{
+dispatch(getProd());
+},[dispatch]);
   return (
     <Router>
       <div>
@@ -23,6 +37,7 @@ function App() {
           <Route exact path="/Login" component={Login}/>
           <Route exact path="/Product" component={Product}/>
           <Route exact path="/Event" component={Event}/>
+          <Route exact path="/SuitCase" component={Suit}/>
         </Switch>
     </div>
     </Router>

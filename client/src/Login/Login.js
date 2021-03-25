@@ -10,7 +10,7 @@ class LoginForm extends React.Component {
             <div class="container">
               
                 <form class="logfr">
-                    <div class="cont">
+                    <div class="contlog">
                         
                     
                 <h1>login</h1>

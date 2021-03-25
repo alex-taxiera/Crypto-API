@@ -9,11 +9,23 @@ import logo from './profile components/avatar2.png';
 /*css*/
 import '../css/prof.css';
 import '../css/bootstrap.min.css';
-class Profile extends React.Component {
+import AddProd from './profile components/AddProd.js';
+
+/*redux*/
+import {useSelector} from 'react-redux';
+
+
+function Profile() {
 
 
 
-    render() {
+
+    
+        const products=useSelector((state)=>state.products);
+        console.log(products);
+
+
+        
         const x = {
             src: logo,
             cmpname: " APII",
@@ -26,18 +38,7 @@ class Profile extends React.Component {
         
         const prof = (
             <div class="containerr">
-                <div class="cont">
-
-
-{/*nav test*/}
-
-
-
-
-
-{/*end nav test */}
-
-
+                <div class="contprof">
                     <div class="row">
                         <div class="col-sm-6" id="info">
 
@@ -47,6 +48,7 @@ class Profile extends React.Component {
                                 jobpos={x.jobpos}
                                 cmpname={x.cmpname}
                                 loc={x.loc}/>
+                              <AddProd/>
                         </div>
 
                         <div class="col-6" id="rightpart">
@@ -67,6 +69,6 @@ class Profile extends React.Component {
         return prof;
 
     }
-}
+
 
 export default Profile;

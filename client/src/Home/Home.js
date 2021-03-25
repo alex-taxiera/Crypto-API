@@ -2,16 +2,16 @@
 import React from 'react';
 
 
-class Home extends React.Component{
 
-    render(){
-        return (
+function Home(){
+  
+    return (
 
-            <h1>
-           home
-            </h1>
-        );
-    }
+        <h1>
+       homee
+        </h1>
+    );
 }
+
 
 export default Home;
