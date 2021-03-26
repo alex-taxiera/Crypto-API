@@ -9,6 +9,8 @@ export const getProd= async  ( req, res)=>{
         }
 }
 
+
+
 export const CreateProd= async (req,res)=>{
     const body=req.body;
         const newprod=new PostProdApi(body); 

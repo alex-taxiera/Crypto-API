@@ -13,18 +13,19 @@ import Suit from "./SuitCase/Suit";
 
 
 /*redux*/
-
-import {useDispatch} from 'react-redux';
-import { useEffect } from 'react';
 import {getProd} from './actions/post';
+  import {useDispatch} from 'react-redux';
+  import { useEffect } from 'react';
+
 function App() {
   
   
+ 
+  const dispatch=useDispatch();
+  useEffect(()=>{
+  dispatch(getProd());
+  },[dispatch]);
 
-const dispatch=useDispatch();
-useEffect(()=>{
-dispatch(getProd());
-},[dispatch]);
   return (
     <Router>
       <div>

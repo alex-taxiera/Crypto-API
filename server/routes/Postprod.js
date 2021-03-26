@@ -1,11 +1,9 @@
 import express from 'express';
 import {getProd,CreateProd} from '../Controllers/Api.js';
-const router=express.Router();
-
-router.get('/', getProd);
-router.post('/', CreateProd);
+const PostRouter=express.Router();
 
 
+PostRouter.post('/', CreateProd);
 
 
-export default router;
+export default PostRouter;

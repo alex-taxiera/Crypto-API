@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const postSchema= mongoose.Schema({
     title:{
         type: String,
-        required: true
+       
     },
 desc:{
         type: String,
@@ -17,6 +17,11 @@ state:{
         type: String,
         required: true
     },
+    date_creation:{
+        type:Date,
+        default :new Date(),
+        required:true,
+    }
 /*exclusive:{
         type: Boolean,
         required: true
@@ -29,7 +34,7 @@ state:{
 })
 
 
-const postProd=mongoose.model('Product',postSchema) ;
+const postProd=mongoose.model('Post',postSchema) ;
 
 
 export default postProd;

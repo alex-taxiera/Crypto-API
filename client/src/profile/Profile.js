@@ -21,8 +21,8 @@ function Profile() {
 
 
     
-        const products=useSelector((state)=>state.products);
-        console.log(products);
+        const product=useSelector((state)=>state.product);
+       
 
 
         

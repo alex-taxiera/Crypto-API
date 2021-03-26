@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -6,12 +6,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Picture from "./cart-logo.svg.hi.png";
 
+import {getProd} from '../../actions/post';
+import {useDispatch} from 'react-redux';
+import { useEffect } from 'react';
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 180,
-    maxWidth: 350,
+    maxWidth: 300,
     paddingLeft:"10px",
     paddingRight:"10px",
     paddingTop:"10px",
@@ -22,24 +24,46 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '56.25%',
   },
 }));
+function Item ({post}) {
 
-export default function Item() {
+  
   const classes = useStyles();
 
+
+console.log(post.title);
   return (
     <Card className={classes.root}>
-      <CardHeader
-        title="Product/Service Name"
-      />
-      <CardMedia
+       <CardMedia
         className={classes.media}
-        image={Picture}
-        title="Product/Service Name"
+        image={post.image}
+        title={post.title}
       />
+      
+      <CardHeader
+        title={post.title}
+      />
+     
       <CardContent>
+
+      {/* <Typography variant="h6" color="primary" component="p">
+          {post.creator}
+        </Typography>*/} 
+
+
         <Typography variant="body2" color="textSecondary" component="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {post.desc}
         </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {post.date_creation}
+        </Typography>
+        {/*
+        <div>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {post.desc}
+        </Typography>
+
+          </div>
+       */}
       </CardContent>
         <Button size="small" color="primary" variant="contained">
           Express Intrest
@@ -47,3 +71,4 @@ export default function Item() {
     </Card>
   );
 }
+export default Item;

@@ -11,8 +11,9 @@ import {createProd} from '../../actions/post.js';
 function AddProd() {
     const [show, setShow] = useState(false);
     //state property
+    const date=new Date();
     const [prodData, setProdData] = useState(
-        {type: 'post', title: '', desc: '', image: '', state: ''}
+        {type: 'post', title: '', desc: '', image: '', state: '', }
     );
 
 
@@ -22,9 +23,8 @@ function AddProd() {
 
     const handleform = (e) => {
         e.preventDefault();
-
-       
         dispatch(createProd(prodData));
+        handleClose();
     }
 
     return (
@@ -35,11 +35,12 @@ function AddProd() {
             </Button>
           
                 <Modal show={show} onHide={handleClose} animation={true}>
-                    <Modal.Header>
+                <Form autoComplete="off" noValidate="noValidate" onSubmit={handleform}>
+                    <Modal.Header closeButton>
                         <Modal.Title>Creating a product or a service</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                    <Form autoComplete="off" noValidate="noValidate" onSubmit={handleform}>
+                  
                         <Form.Row>
                             <Form.Group
                                 as={Col}
@@ -124,18 +125,21 @@ function AddProd() {
                                     image: base64
                                 })}/>
                         </div>
-                        <Button type="submit" className="btn-mod-add">
+                       
+                       
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button type="submit" className="btn-mod-add">
                             <AddCircleOutlineIcon/>
                             Add prod
                             </Button>
-                        </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
                        
                     </Modal.Footer>
+                   
+                    </Form>
                 </Modal>
            
         </div>
