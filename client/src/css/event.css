@@ -1,0 +1,48 @@
+.event{
+    margin-top: 5%;
+}
+
+
+/*card position*/
+.card {
+    width: 89%;
+    height: 30vh;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-right: 5%;
+    box-shadow: 0 3px 10px rgba(46, 45, 45, 0.2);
+    margin-bottom: 5%;
+    outline: none;
+    border: none;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0);
+    opacity: .4em;
+}
+
+/*card size*/
+
+.card-img {
+width: 100%;
+    padding-bottom: 10%;
+
+}
+/*text position*/
+.card-img-overlay {
+    margin-top: 5%;
+    
+}
+/*btn participate */
+.btn-participate{
+  float: right;
+  margin-top: 10%;
+  margin-right: 50%;
+  border: none;
+  outline: none;
+  background-color: #2699fb;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-right: 10%;
+  padding-left: 10%;
+  border-radius: 10px;
+  color: white;
+}

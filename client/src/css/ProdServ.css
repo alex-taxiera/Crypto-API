@@ -1,0 +1,64 @@
+/*product sector*/
+
+.card-prod{
+    background-color: white !important;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom:5%;
+    outline: 1px solid lightgrey;
+    width: 90%;
+    overflow: hidden;
+}
+
+.prodImg{
+    height: 25vh;
+    width: 100%;
+    outline: 1px solid lightgrey;
+}
+
+.prodImg:Hover{
+    filter: blur(3px);
+    transform: scale(1.1);
+}
+
+.card-title-prod{
+    margin-bottom: 5%;
+}
+
+.card-text-prod{
+padding-top: 2%;
+    float: left;
+}
+
+.card-body-prod{
+    text-align: center;
+    margin-top: 10%; 
+    margin-bottom: 10%;
+    margin-left: 5%;
+    background-color: white;
+}
+
+.btn-delete{
+    margin-right: 5%;
+    margin-bottom: 5%;
+    float: right;
+    color: red;
+    
+}
+/*override text */
+#nbi{
+    float: left !important;
+    margin-right: 50%;
+    
+}
+
+/* lien color*/
+
+.link-to-product{
+    color: black;
+    text-decoration: none
+    
+}
+.link-to-product:hover{
+     color: black;
+}
