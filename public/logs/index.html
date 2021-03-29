@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Crypto Graph</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Crypto Graph</h1>
+    <div><a href="/">enter pair address</a> | <a href="/logs">graph of data</a></div>
+    <br />
+    <canvas id="myChart"></canvas>
+
+    <script>
+        const ids = [];
+        let graphName;
+
+        async function getData() {
+            let response = await fetch('/api');
+            let data = await response.json();
+            console.log(data);
+            for (item of data) {
+                if (!ids.includes(item._id)) {
+                    console.log(item._id);
+                    ids.push(item._id);
+                    const root = document.createElement('p');
+                    const token = document.createElement('div');
+                    const price = document.createElement('div');
+                    const name0 = document.createElement('div');
+                    const name1 = document.createElement('div');
+                    graphName = item.name0 + "/" + item.name1;
+                    const date = document.createElement('div');
+                    const dateString = new Date(item.timestamp).toLocaleString();
+                    xlabels.push(dateString);
+
+                    date.textContent = dateString;
+                    const values = {
+                        x: item.timestamp,
+                        y: item.price
+                    };
+                    token.textContent = `pair_address: ${item.token}`;
+                    price.textContent = `price: ${item.price}`;
+                    prices.push(values);
+                    xlabels.push(dateString);
+                    name0.textContent = `first coin: ${item.name0}`;
+                    name1.textContent = `second coin: ${item.name1}`;
+
+                    root.append(token, price, name0, name1, date);
+                    document.body.append(root);
+                }
+            }
+
+        }
+
+        //console.log(prices);
+        let myChart;
+        async function interval_update() {
+            await getData();
+            //console.log('this should work');
+            myChart.update();
+        }
+        const xlabels = [];
+        const prices = [];
+        chartIt();
+        setInterval(interval_update, 5000);
+
+
+        async function chartIt() {
+            await getData();
+            var ctx = document.getElementById('myChart').getContext('2d');
+            myChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    //labels: xlabels,
+                    datasets: [{
+                        label: `Price of ${graphName}`,
+                        data: prices,
+                        fill: true,
+                        backgroundColor: 
+                            'rgba(255, 99, 132, 0.2)'
+                        ,
+                        borderColor: 
+                            'rgba(255, 99, 132, 1)'
+                        ,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            type: 'linear',
+                            position: 'bottom'
+                        }]
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
