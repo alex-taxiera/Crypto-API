@@ -16,10 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@sushiswap/sushi-data": "^1.0.7",
-    "chart.js": "^2.9.4",
     "express": "^4.17.1",
-    "nedb": "^1.8.0",
-    "require": "^2.4.20",
-    "requirejs": "^2.3.6"
+    "nedb": "^1.8.0"
   }
 }
